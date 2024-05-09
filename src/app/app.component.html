@@ -1,0 +1,51 @@
+<div class="body">
+  <div class="container-fluid  col-lg-12" >
+  </div>
+  <div class="container  col-md-8" id="parent">
+    <h1 class="mb-4">To-Do List</h1>
+  
+    <div class="row d-flex justify-content-end ">
+      <div class="col-md-4 ">
+        <div class="input-group ">
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search for tasks">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mt-4">
+        <div class="input-group">
+          <input type="text" id="taskInput" autocomplete="off" class="form-control" placeholder="Add new task" required [(ngModel)]="inputValue">
+          <div class="input-group-append">
+            <button class="btn plus" (click)="addTask()" [disabled]="inputValue.length==0">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--  -->
+  <div class="container mt-4 col-md-8">
+      <div *ngFor="let task of tasks | filterPipe:searchText ; let i = index" class="task-item">
+        <div class="task-details">
+          <input #valueUpdated type="text" value="{{ task.myTask  }}" [disabled]="!task.isEditable" [ngClass]="{'checked' : task.isChecked ,'edit' : task.isEditable }">
+          <div class="buttons">
+            <span class="ss">
+              <input class="checkIcon"  type="checkbox" title="completed" (click)="checked(i) ">
+            </span>
+            <span >
+              <fa-icon class="text-danger" title="delete" (click)="removeTask(i)" [icon]="faTrash"></fa-icon>
+            </span>
+            <span [ngClass]="{'disabled-span' : task.isEditable  }">
+              <fa-icon  class="text-primary" title="Edit"  (click)="updateTask(i)" [icon]="faEdit"></fa-icon>
+            </span>
+            <span [ngClass]="{'disabled-span' : !task.isEditable}">
+              <fa-icon class="text-warning"  title="Save" (click)="saveTask(i,valueUpdated.value)" [icon]="faSave"></fa-icon>
+            </span>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+</div>

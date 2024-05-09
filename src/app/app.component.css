@@ -1,0 +1,86 @@
+.body {
+  background: rgb(237, 101, 147);
+  height: 205px;
+}
+h1 {
+  color: rgb(237, 101, 147);
+}
+input {
+  border-radius: 5px;
+}
+input:focus {
+  border-color: #dddddd;
+  box-shadow: none;
+  outline: none;
+}
+
+.plus {
+  width: 40px;
+  border: 0;
+  height: 42px;
+  background: rgb(237, 101, 147);
+  color: #f6f6f6;
+  cursor: pointer;
+}
+.container {
+  background: #ffffff !important;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.task-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgb(217, 190, 199);
+  border: 1px solid #f6f6f6;
+}
+
+.task-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.task-details input:first-child {
+  padding: 6px;
+  max-width: 40% !important;
+  border: 0;
+  opacity: 1 !important;
+  background: transparent;
+}
+
+.buttons span {
+  margin-left: 10px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.buttons fa-icon:first-child {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 25px;
+
+}
+.checkIcon {
+  width: 25px;
+  height: 15px;
+  position: relative;
+  top: 3px;
+}
+
+.disabled-span {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.checked {
+  text-decoration: line-through;
+}
+.edit {
+  border: 1px solid rgb(237, 101, 147) !important;
+}
