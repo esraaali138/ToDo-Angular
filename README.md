@@ -6,7 +6,7 @@ This project is application built with Angular.
 1. **clone the repo**  
 
 
-1. **run the command npm install**  
+1. **run the command npm install --force**  
 
 
 2. **run ng serve**  
