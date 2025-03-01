@@ -3,10 +3,10 @@
 This project is application built with Angular.
 
 ## How to Run the Project 
-2. **clone the repo**  
+1. **clone the repo**  
 
 
-2. **run the command npm install**  
+1. **run the command npm install**  
 
 
-3. **run ng serve**  
+2. **run ng serve**  
