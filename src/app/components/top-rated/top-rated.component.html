@@ -1,0 +1,86 @@
+<section class="mt-20 px-4">
+  <p class="text-2xl sm:text-4xl text-center font-bold text-[#252563] mb-6">
+    Top Rated Tours
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-2 font-bold mt-6 sm:mt-10">
+    <div
+      *ngFor="let country of countries; let i = index"
+      class="px-3 py-2 cursor-pointer transition text-sm sm:text-base"
+      (click)="setActive(i)"
+      [ngClass]="{
+        'bg-[#f48436] text-white rounded shadow-md': activeIndex === i
+      }"
+    >
+      {{ country }}
+    </div>
+  </div>
+
+  <div class="flex justify-center font-bold px-2 sm:px-10 mt-6">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-6xl"
+    >
+      <div
+        class="w-full sm:w-[350px] bg-white mt-6 border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:-translate-y-1"
+        *ngFor="let Card of Cards"
+      >
+        <a href="#">
+          <img
+            class="rounded-t-lg w-full h-48 sm:h-60 object-cover"
+            src="{{ Card.url }}"
+            alt="Tour Image"
+          />
+        </a>
+
+        <div class="p-4">
+          <p class="font-semibold text-base sm:text-lg">{{ Card.name }}</p>
+          <p class="text-gray-600 text-xs sm:text-sm mt-1">
+            {{ Card.description || "Experience an unforgettable adventure." }}
+          </p>
+
+          <div class="flex justify-between items-center mt-2">
+            <div class="flex gap-1">
+              <fa-icon
+                class="text-amber-400 text-xs sm:text-base"
+                [icon]="faStar"
+              ></fa-icon>
+              <fa-icon
+                class="text-amber-400 text-xs sm:text-base"
+                [icon]="faStar"
+              ></fa-icon>
+              <fa-icon
+                class="text-amber-400 text-xs sm:text-base"
+                [icon]="faStar"
+              ></fa-icon>
+              <fa-icon
+                class="text-amber-400 text-xs sm:text-base"
+                [icon]="faStar"
+              ></fa-icon>
+              <fa-icon
+                class="text-amber-400 text-xs sm:text-base"
+                [icon]="faStar"
+              ></fa-icon>
+            </div>
+            <p class="text-[#252563] font-bold text-sm sm:text-base">
+              {{ Card.price }}$
+            </p>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="flex justify-between py-3 px-3">
+          <div class="flex gap-2 items-center text-xs sm:text-sm">
+            <fa-icon [icon]="faUser"></fa-icon>
+            <p>per</p>
+          </div>
+          <button
+            class="px-3 py-2 bg-[#f48436] text-white font-bold rounded hover:bg-[#d96b2b] transition text-xs sm:text-sm"
+          >
+            Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
