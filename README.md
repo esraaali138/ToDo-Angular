@@ -1,2 +1,1 @@
-ToDo using Angular, bootstrap
-https://to-do-angular-pi.vercel.app/
+tourism home using Angular, tailwind
